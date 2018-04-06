@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Sign in Application</string>
+    <string name="welcome">Welcome to "%1$s"</string>
+    <string name="welcome_to_account">Welcome to account, "%s"</string>
+    <string name="account">Account</string>
+    <string name="exit">Exit</string>
+
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_up1">Sign up. Stage 1/3</string>
+    <string name="sign_up2">Sign up. Stage 2/3</string>
+    <string name="sign_up3">Sign up. Stage 3/3</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register_here">No account yet? Register here.</string>
+    <string name="logout">Leave account</string>
+    <string name="next">Next</string>
+    <string name="reg_info">Here you can register to achieve access to the system. Please click on \"Next\" button and fill in the registration fields.</string>
+    <string name="terms_service">Terms of service</string>
+    <string name="agree_terms_service">I\'m agree with terms of service</string>
+    <string name="confirm_terms_service">Please confirm that you agree with terms of service</string>
+    <string name="country">Country</string>
+    <string name="city">City</string>
+    <string name="zip">Postal index</string>
+
+    <string name="err_wrong_credentials">You input wrong account data. Please check the syntax.</string>
+    <string name="err_password_too_short">Your password too short.</string>
+    <string name="err_timeout">Server is busy. Try again later.</string>
+
+    <string name="no_connection">There is no internet connection found. Please check the network settings, setup WiFi.</string>
+    <string name="msg_error_occurred">There is error occurred while implementing this request.</string>
+    <string name="network_settings">Network settings</string>
+
+    <string name="info_not_found">Item description not found.</string>
+    <string name="please_wait_loading">Please wait while data are loading</string>
+    <string name="server_response" formatted="false">Server response: %1$s\n %2$s</string>
+    <string name="no_response">Api server is busy right now and heve no response. Please wait some time to reload again.</string>
+    <string name="reload">Reload again from server.</string>
+    <string name="total_found" formatted="false">There are found: %1$s</string>
+    <string name="not_found">There are nothing found by your request.</string>
+    <string name="login_input_incorrect">Login input is insufficient. Please fill in the fields.</string>
+    <string name="error_occurred">There is an error occurred:\n%1$d, %2$s\n%3$s</string>
+    <string name="email_error">Please input e-mail correctly.</string>
+    <string name="password_error">Please input password correctly.</string>
+    <string name="city_error">Please input name of city correctly.</string>
+    <string name="zip_error">Please input postal index correctly.</string>
+    <string name="select_list">Please select</string>
+    <string name="country_error">Please select country from the list</string>
+    <string name="congratulation">Congratulation! You have registered successfully.</string>
+    <string name="registered">Registered</string>
+    <string name="please_wait">Please wait while data are loading.</string>
+    <string name="last_login">Last login was at %s</string>
+    <string name="reg_failed">Registration has been failed.</string>
+    <string name="reg_succeeded">Registration has been succeeded.</string>
+
+</resources>
