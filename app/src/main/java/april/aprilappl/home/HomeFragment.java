@@ -1,6 +1,8 @@
 package april.aprilappl.home;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -46,6 +48,7 @@ public class HomeFragment extends Fragment {
         sharedStates.setKey("regUsername", "");
         sharedStates.setKey("regPassword", "");
         sharedStates.setKey("regCountry", "");
+        sharedStates.setKey("regCountryName", "");
         sharedStates.setKey("regCity", "");
         sharedStates.setKey("regZip", "");
 

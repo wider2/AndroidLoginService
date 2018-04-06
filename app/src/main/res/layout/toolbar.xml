@@ -61,6 +61,7 @@
             android:contentDescription="@null"
             android:padding="1dip"
             android:text=""
+            android:visibility="visible"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </RelativeLayout>

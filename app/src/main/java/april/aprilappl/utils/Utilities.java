@@ -73,6 +73,8 @@ public class Utilities {
             result = context.getString(R.string.err_password_too_short);
         } else if (phrase.contains("err.timeout")) {
             result = context.getString(R.string.err_timeout);
+        } else if (phrase.contains("err.user.exists")) {
+            result = context.getString(R.string.err_user_exists);
         } else {
             result = phrase;
         }

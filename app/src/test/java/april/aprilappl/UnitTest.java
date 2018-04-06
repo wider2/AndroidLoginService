@@ -1,5 +1,8 @@
 package april.aprilappl;
 
+import android.content.Context;
+
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Calendar;
@@ -12,6 +15,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
 public class UnitTest {
+
+
+    @Before
+    public void setUp() throws Exception {
+
+    }
 
     @Test
     public void testEmail() throws Exception {

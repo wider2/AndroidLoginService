@@ -5,6 +5,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,7 @@ import java.util.List;
 import april.aprilappl.model.ModelLogin;
 import april.aprilappl.model.ModelRegister;
 import april.aprilappl.utils.GlobalConstants;
+import april.aprilappl.utils.Utilities;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNull;
@@ -29,12 +31,13 @@ import static org.junit.Assert.assertThat;
 @RunWith(AndroidJUnit4.class)
 public class DatabaseTest {
 
-    LoginDatabase db;
+    private Context context;
+    private LoginDatabase db;
 
     @Before
     public void setUp() throws Exception {
-        Context appContext = InstrumentationRegistry.getTargetContext();
-        db = LoginDatabase.getInstance(appContext);
+        context = InstrumentationRegistry.getTargetContext();
+        db = LoginDatabase.getInstance(context);
     }
 
     @After
@@ -124,4 +127,14 @@ public class DatabaseTest {
         ModelLogin result = db.loginDao().loadLoginByUsername(username);
         assertThat(true, is(result.getUsername().equals(username)));
     }
+
+    @Test
+    public void testPhrase() throws Exception {
+        String phrase = "[text={\"error\":\"err.wrong.credentials\"}]";
+
+        String result = Utilities.errorPhrase(context, phrase);
+
+        Assert.assertThat(true, is(result.contains("wrong")));
+    }
+
 }

@@ -26,6 +26,7 @@
     <string name="err_wrong_credentials">You input wrong account data. Please check the syntax.</string>
     <string name="err_password_too_short">Your password too short.</string>
     <string name="err_timeout">Server is busy. Try again later.</string>
+    <string name="err_user_exists">Such user has already been registered before.</string>
 
     <string name="no_connection">There is no internet connection found. Please check the network settings, setup WiFi.</string>
     <string name="msg_error_occurred">There is error occurred while implementing this request.</string>

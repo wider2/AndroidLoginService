@@ -4,8 +4,8 @@
     android:id="@+id/ll_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
     android:background="@color/background_bright"
+    android:clickable="true"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
@@ -22,7 +22,6 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:gravity="center_horizontal"
         android:orientation="vertical">
-
 
         <TextView
             android:id="@+id/tvCountry"
@@ -45,8 +44,8 @@
             android:focusableInTouchMode="true"
             android:gravity="start"
             android:hint="@string/country"
-            android:spinnerMode="dialog"
             android:popupBackground="#ffffff"
+            android:spinnerMode="dialog"
             android:textColor="@color/gray_light1" />
 
 
@@ -65,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:focusable="true"
                 android:hint="@string/city"
                 android:imeOptions="actionGo"
                 android:inputType="text"
@@ -89,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:focusable="true"
                 android:hint="@string/zip"
                 android:imeOptions="actionGo"
                 android:inputType="text"
