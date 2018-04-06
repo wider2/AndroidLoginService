@@ -5,7 +5,7 @@ import java.util.List;
 import april.aprilappl.model.ModelLogin;
 
 
-interface IAccountFragment {
+public interface IAccountFragment {
 
     void refreshResult(ModelLogin modelLogin, List<ModelLogin> listLogins);
 
