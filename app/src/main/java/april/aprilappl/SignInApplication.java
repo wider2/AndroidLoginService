@@ -16,11 +16,7 @@ public class SignInApplication extends Application {
     private LoginDatabase loginDatabase;
 
     private LibComponent libComponent;
-/*
-    public LibComponent getLibComponent() {
-        return libComponent;
-    }
-*/
+
     @Override
     public void onCreate() {
         super.onCreate();
