@@ -13,4 +13,8 @@ public class HelperUtils {
         KeyboardUtility.showKeyboard(editText);
     }
 
+    public boolean HelperUtilsZip(String zip) {
+        return Utilities.isValidZip(zip);
+    }
+
 }

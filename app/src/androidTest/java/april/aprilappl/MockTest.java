@@ -29,8 +29,10 @@ import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -57,7 +59,7 @@ public class MockTest {
         String mockString = "err.wrong.credentials";
 
         HelperUtils mockResult = mock(HelperUtils.class);
-        Mockito.when(mockResult.HelperUtilsPhrase(mockContext, mockString)).thenReturn(mockString);
+        when(mockResult.HelperUtilsPhrase(mockContext, mockString)).thenReturn(mockString);
 
         String result = Utilities.errorPhrase(mockContext, mockString);
 
@@ -65,13 +67,32 @@ public class MockTest {
     }
 
     @Test
-    public void testMockModel() {
+    public void testMockKeyboard() {
         EditText editText = mock(EditText.class);
 
         HelperUtils helperUtils = mock(HelperUtils.class);
 
         doThrow(new RuntimeException()).when(helperUtils).HelperUtilsKeyboard(editText);
     }
+
+    @Test
+    public void testMockZipSuccess() {
+        String zip="AB10 1AF";
+
+        HelperUtils helperUtils = mock(HelperUtils.class);
+
+        doReturn(true).when(helperUtils).HelperUtilsZip(zip);
+    }
+
+    @Test
+    public void testMockZipFailure() {
+        String zip="ZZZ AB10 1AF YYY";
+
+        HelperUtils helperUtils = mock(HelperUtils.class);
+
+        when(helperUtils.HelperUtilsZip(zip)).thenReturn(false);
+    }
+
 
     @Test
     public void testUpdate() {

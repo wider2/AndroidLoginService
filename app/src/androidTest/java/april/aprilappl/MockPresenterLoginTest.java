@@ -20,7 +20,6 @@ import april.aprilappl.model.ModelResponse;
 import april.aprilappl.register.IRegisterFragment;
 import april.aprilappl.register.RegisterFragmentPresenter;
 
-import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -94,7 +93,17 @@ public class MockPresenterLoginTest {
 
         when(iRegisterFragment.refreshResult(modelResponse, modelRegister)).thenReturn(true);
         registerFragmentPresenter.postRegister(username, password, city, zip, country);
+    }
 
+    @Test
+    public void testSendRegistration2() {
+        IRegisterFragment iRegisterFragment = mock(IRegisterFragment.class);
+        RegisterFragmentPresenter registerFragmentPresenter = new RegisterFragmentPresenter(iRegisterFragment);
+
+        RegisterFragmentPresenter spyRegisterPresenter = Mockito.spy(registerFragmentPresenter);
+        spyRegisterPresenter.postRegister(username, password, city, zip, country);
+
+        verify(spyRegisterPresenter).postRegister(username, password, city, zip, country);
     }
 
 }
