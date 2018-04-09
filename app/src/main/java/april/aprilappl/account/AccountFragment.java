@@ -83,6 +83,7 @@ public class AccountFragment extends Fragment implements IAccountFragment {
         unbinder.unbind();
     }
 
+
     @OnClick(R.id.btLogout)
     void submitLogoutButton() {
         try {
@@ -96,6 +97,7 @@ public class AccountFragment extends Fragment implements IAccountFragment {
             ex.printStackTrace();
         }
     }
+
 
     @UiThread
     @Override
@@ -123,12 +125,14 @@ public class AccountFragment extends Fragment implements IAccountFragment {
         }
     }
 
+
     @UiThread
     @Override
     public void showException(Exception ex) {
         tvOutput.setText(getString(R.string.server_response, ex.getMessage(), ex.getStackTrace().toString()));
         progressBar.setVisibility(View.GONE);
     }
+
 
     @UiThread
     @Override
