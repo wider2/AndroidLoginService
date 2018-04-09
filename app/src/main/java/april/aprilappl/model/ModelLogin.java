@@ -19,6 +19,11 @@ public class ModelLogin {
     @ColumnInfo(name = "last_visit")
     private long lastVisit;
 
+    public void setModelLogin(String username, String password, long lastVisit) {
+        this.username = username;
+        this.password = password;
+        this.lastVisit = lastVisit;
+    }
 
     public int getId() {
         return id;
