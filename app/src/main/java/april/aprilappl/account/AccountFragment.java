@@ -104,7 +104,6 @@ public class AccountFragment extends Fragment implements IAccountFragment {
         tvTitle.setText(getString(R.string.welcome_to_account, username));
         tvAccount.setText(Utilities.getNameEllipsize(username));
         progressBar.setVisibility(View.GONE);
-        //KeyboardUtility.hideSoftKeyboard(getContext());
 
         //just to show previous login visit
         if (!listLogins.isEmpty()) {
@@ -114,7 +113,11 @@ public class AccountFragment extends Fragment implements IAccountFragment {
                 }
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
                 Date theDate = new Date(timeStamp);
-                tvOutput.setText(getString(R.string.last_login, sdf.format(theDate)));
+                if (theDate.toString().startsWith("01/01/1970")) {
+                    tvOutput.setText(getString(R.string.first_login));
+                } else {
+                    tvOutput.setText(getString(R.string.last_login, sdf.format(theDate)));
+                }
             }
         }
     }

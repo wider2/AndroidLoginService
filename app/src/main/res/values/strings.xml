@@ -50,7 +50,8 @@
     <string name="congratulation">Congratulation! You have registered successfully.</string>
     <string name="registered">Registered</string>
     <string name="please_wait">Please wait while data are loading.</string>
-    <string name="last_login">Last login was at %s</string>
+    <string name="last_login">Previous login was at %s</string>
+    <string name="first_login">It is your first login in the system.</string>
     <string name="reg_failed">Registration has been failed.</string>
     <string name="reg_succeeded">Registration has been succeeded.</string>
 

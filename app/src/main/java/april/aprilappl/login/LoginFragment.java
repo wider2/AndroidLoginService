@@ -70,6 +70,9 @@ public class LoginFragment extends Fragment implements ILoginFragment {
                     .insetsFrom(R.id.ll_root)
                     .colorRes(R.color.n_orange);
 
+            //KeyboardUtility.showSoftKeyboard(getContext(), etUsername);
+            KeyboardUtility.showKeyboard(etUsername);
+
         } catch (Exception ex) {
             ex.printStackTrace();
             tvOutput.setText(ex.getMessage());
@@ -94,8 +97,10 @@ public class LoginFragment extends Fragment implements ILoginFragment {
 
         if (!Utilities.isValidEmail(username)) {
             usernameWrapper.setError(getString(R.string.email_error));
+            KeyboardUtility.showKeyboard(etUsername);
         } else if (!Utilities.isPasswordValid(password)) {
             passwordWrapper.setError(getString(R.string.password_error));
+            KeyboardUtility.showKeyboard(etPassword);
         } else {
             tvOutput.setText(getString(R.string.please_wait));
             progressBar.setVisibility(View.VISIBLE);

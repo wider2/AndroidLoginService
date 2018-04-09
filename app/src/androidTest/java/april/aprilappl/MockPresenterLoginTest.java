@@ -28,7 +28,7 @@ public class MockPresenterLoginTest {
     @Mock
     LoginFragment loginFragment;
 
-    LoginFragmentPresenter loginFragmentPresenter;
+    private LoginFragmentPresenter loginFragmentPresenter;
 
     @Before
     public void setUp() throws Exception {
@@ -43,8 +43,7 @@ public class MockPresenterLoginTest {
 
         AccountFragmentPresenter accountFragmentPresenter = mock(AccountFragmentPresenter.class);
 
-        MockitoException exception = new MockitoException("test");
-        doThrow(exception).when(accountFragmentPresenter).loadLastSession();
+        doThrow(new RuntimeException()).when(accountFragmentPresenter).loadLastSession();
     }
 
     @Test

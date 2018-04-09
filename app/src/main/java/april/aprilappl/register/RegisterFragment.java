@@ -96,6 +96,7 @@ public class RegisterFragment extends Fragment implements IRegisterFragment {
                         submitNextRegister3();
                     }
                 });
+                KeyboardUtility.showKeyboard(etCity);
 
                 city = prefs.getString("city", "");
                 zip = prefs.getString("zip", "");
@@ -133,6 +134,7 @@ public class RegisterFragment extends Fragment implements IRegisterFragment {
                 username = prefs.getString("username", "");
                 username = Utilities.getNameEllipsize(username);
 
+
             } else if (regStage.equals("2")) {
 
                 mainView = inflater.inflate(R.layout.fragment_register2, container, false);
@@ -156,6 +158,7 @@ public class RegisterFragment extends Fragment implements IRegisterFragment {
                 password = prefs.getString("password", "");
                 etUsername.setText(username);
                 etPassword.setText(password);
+                KeyboardUtility.showKeyboard(etUsername);
 
             } else {
 
