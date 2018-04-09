@@ -1,5 +1,8 @@
 package april.aprilappl;
 
+import android.content.Context;
+import android.support.test.InstrumentationRegistry;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,10 +16,15 @@ import april.aprilappl.account.IAccountFragment;
 import april.aprilappl.login.ILoginFragment;
 import april.aprilappl.login.LoginFragment;
 import april.aprilappl.login.LoginFragmentPresenter;
+import april.aprilappl.model.ModelRegister;
 import april.aprilappl.model.ModelResponse;
+import april.aprilappl.register.IRegisterFragment;
+import april.aprilappl.register.RegisterFragmentPresenter;
 
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -24,6 +32,12 @@ public class MockPresenterLoginTest {
 
     private String username = "test@test.com";
     private String password = "Qwert123";
+    private String city = "Tallinn";
+    private String country = "EE";
+    private String zip = "12345";
+
+    @Mock
+    Context mockContext;
 
     @Mock
     LoginFragment loginFragment;
@@ -32,7 +46,7 @@ public class MockPresenterLoginTest {
 
     @Before
     public void setUp() throws Exception {
-
+        mockContext = InstrumentationRegistry.getTargetContext();
         ILoginFragment mainView = mock(ILoginFragment.class);
         loginFragmentPresenter = new LoginFragmentPresenter(mainView);
     }
@@ -68,6 +82,19 @@ public class MockPresenterLoginTest {
         LoginFragmentPresenter spy = Mockito.spy(loginFragmentPresenter);
 
         doThrow(new RuntimeException()).when(spy).checkLogin(username, password);
+    }
+
+    @Test
+    public void testSendingTweet() {
+        ModelResponse modelResponse = new ModelResponse();
+        ModelRegister modelRegister = new ModelRegister();
+
+        IRegisterFragment iRegisterFragment = mock(IRegisterFragment.class);
+        RegisterFragmentPresenter registerFragmentPresenter = new RegisterFragmentPresenter(iRegisterFragment);
+
+        when(iRegisterFragment.refreshResult(modelResponse, modelRegister)).thenReturn(true);
+        registerFragmentPresenter.postRegister(username, password, city, zip, country);
+
     }
 
 }

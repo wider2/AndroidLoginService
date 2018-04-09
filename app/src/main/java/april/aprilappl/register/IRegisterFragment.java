@@ -3,9 +3,9 @@ package april.aprilappl.register;
 import april.aprilappl.model.ModelRegister;
 import april.aprilappl.model.ModelResponse;
 
-interface IRegisterFragment {
+public interface IRegisterFragment {
 
-    void refreshResult(ModelResponse modelResponse, ModelRegister modelRegister);
+    boolean refreshResult(ModelResponse modelResponse, ModelRegister modelRegister);
 
     void showException(Exception ex);
 

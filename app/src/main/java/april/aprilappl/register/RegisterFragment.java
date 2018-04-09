@@ -282,9 +282,11 @@ public class RegisterFragment extends Fragment implements IRegisterFragment {
 
     @UiThread
     @Override
-    public void refreshResult(ModelResponse modelResponse, ModelRegister modelRegister) {
+    public boolean refreshResult(ModelResponse modelResponse, ModelRegister modelRegister) {
+        boolean success;
 
         if (!modelRegister.getUsername().equals("")) {
+            success = true;
             tvOutput.setText(getString(R.string.reg_succeeded));
             progressBar.setVisibility(View.GONE);
             try {
@@ -298,10 +300,13 @@ public class RegisterFragment extends Fragment implements IRegisterFragment {
             } catch (NullPointerException ex) {
                 ex.printStackTrace();
                 tvOutput.setText(ex.getMessage());
+                success = false;
             }
         } else {
+            success = false;
             tvOutput.setText(getString(R.string.reg_failed));
         }
+        return success;
     }
 
     @UiThread
