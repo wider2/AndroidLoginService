@@ -42,7 +42,7 @@
     <string name="login_input_incorrect">Login input is insufficient. Please fill in the fields.</string>
     <string name="error_occurred">There is an error occurred:\n%1$d, %2$s\n%3$s</string>
     <string name="email_error">Please input e-mail correctly.</string>
-    <string name="password_error">Please input password correctly.</string>
+    <string name="password_error">Please input password correctly (upper and lower case, digits)</string>
     <string name="city_error">Please input name of city correctly.</string>
     <string name="zip_error">Please input postal index correctly.</string>
     <string name="select_list">Please select</string>

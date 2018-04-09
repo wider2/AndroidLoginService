@@ -94,7 +94,7 @@ public class MockPresenterLoginTest {
 
         when(iRegisterFragment.refreshResult(modelResponse, modelRegister)).thenReturn(true);
         registerFragmentPresenter.postRegister(username, password, city, zip, country);
-        
+
     }
 
 }
