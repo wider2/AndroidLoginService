@@ -96,7 +96,6 @@ public class RegisterFragment extends Fragment implements IRegisterFragment {
                         submitNextRegister3();
                     }
                 });
-                KeyboardUtility.showKeyboard(etCity);
 
                 city = prefs.getString("city", "");
                 zip = prefs.getString("zip", "");
@@ -133,7 +132,6 @@ public class RegisterFragment extends Fragment implements IRegisterFragment {
 
                 username = prefs.getString("username", "");
                 username = Utilities.getNameEllipsize(username);
-
 
             } else if (regStage.equals("2")) {
 

@@ -65,11 +65,9 @@ public class MockPresenterLoginTest {
         ModelResponse modelResponse = new ModelResponse();
         modelResponse.setData("success");
 
-        MockitoException exception = new MockitoException("test");
-
         LoginFragmentPresenter spy = Mockito.spy(loginFragmentPresenter);
 
-        doThrow(exception).when(spy).checkLogin(username, password);
+        doThrow(new RuntimeException()).when(spy).checkLogin(username, password);
     }
 
 }
