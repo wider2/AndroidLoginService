@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.exceptions.base.MockitoException;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import april.aprilappl.account.AccountFragmentPresenter;
@@ -24,6 +23,7 @@ import april.aprilappl.register.RegisterFragmentPresenter;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 
@@ -85,7 +85,7 @@ public class MockPresenterLoginTest {
     }
 
     @Test
-    public void testSendingTweet() {
+    public void testSendRegistration() {
         ModelResponse modelResponse = new ModelResponse();
         ModelRegister modelRegister = new ModelRegister();
 
@@ -94,7 +94,7 @@ public class MockPresenterLoginTest {
 
         when(iRegisterFragment.refreshResult(modelResponse, modelRegister)).thenReturn(true);
         registerFragmentPresenter.postRegister(username, password, city, zip, country);
-
+        
     }
 
 }
