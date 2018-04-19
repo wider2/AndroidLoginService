@@ -12,4 +12,4 @@ Dagger2 provides dependency injection approach to minimize initializations and i
 
 Singleton SharedStates used to pass data between fragments. I do not use Bundle to avoid loss of data.
 
-Also have been made some unit, instrumental, mock and espresso tests.
+Also have been made some unit, instrumental, mock, espresso and UIAutomator tests.

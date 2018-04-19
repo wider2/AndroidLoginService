@@ -22,6 +22,7 @@
     <string name="country">Country</string>
     <string name="city">City</string>
     <string name="zip">Postal index</string>
+    <string name="countries">Countries</string>
 
     <string name="err_wrong_credentials">You input wrong account data. Please check the syntax.</string>
     <string name="err_password_too_short">Your password too short.</string>
